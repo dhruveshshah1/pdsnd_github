@@ -21,7 +21,7 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print('Hello!   Let\'s explore some US bikeshare data!    ')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input("Which city would you like to explore ?")
@@ -29,7 +29,7 @@ def get_filters():
         if city in ['chicago', 'new york city', 'washington']:
             break
         else:
-            print("invalid input. Please enter a valid input")
+            print(" invalid input. Please enter a valid input ")
     # get user input for month (all, january, february, ... , june)
     while True:    
         month = input("Do you want details specific to a particular month? If yes, type month name from within first six months else type 'all'")
@@ -96,14 +96,14 @@ def time_stats(df):
     start_time = time.time()
 
     # display the most common month
-    print("The most common month is ", df['month'].mode()[0], "\n")
+    print(" The most common month is ", df['month'].mode()[0], "\n")
 
     # display the most common day of week
-    print("The most common day of week  is ", df['day_of_week'].mode()[0], "\n")
+    print(" The most common day of week  is ", df['day_of_week'].mode()[0], "\n")
 
     # display the most common start hour
     df['hour'] = df['Start Time'].dt.hour
-    print("The most common start hour is ", df['hour'].mode()[0])
+    print(" The most common start hour is ", df['hour'].mode()[0])
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -159,11 +159,11 @@ def user_stats(df, city):
         gen = df.groupby(['Gender'])['Gender'].count()
         print(gen)
         # Display earliest, most recent, and most common year of birth
-        mryob = sorted(df.groupby(['Birth Year'])['Birth Year'], reverse=True)[0][0]
-        eyob = sorted(df.groupby(['Birth Year'])['Birth Year'])[0][0]
+        mc = sorted(df.groupby(['Birth Year'])['Birth Year'], reverse=True)[0][0]
+        ec = sorted(df.groupby(['Birth Year'])['Birth Year'])[0][0]
         mcyob = df['Birth Year'].mode()[0]
-        print("The earliest year of birth is ", eyob, "\n")
-        print("The most recent year of birth is ", mryob, "\n")
+        print("The earliest year of birth is ", ec, "\n")
+        print("The most recent year of birth is ", mc, "\n")
         print("The most common year of birth is ", mcyob, "\n")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
