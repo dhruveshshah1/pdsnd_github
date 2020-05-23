@@ -25,3 +25,5 @@ City Data
 The link for commit message style reference for this project is given below :
 
 Udacity Git Commit Message Style Guide
+
+Special thanks to the udacity team
